@@ -12,13 +12,12 @@
 #import "CaptainHook.h"
 #import <UIKit/UIKit.h>
 
-CHDeclareClass(CustomViewController)
-
-CHOptimizedMethod(0, self, NSString*, CustomViewController,getMyName){
-    return @"MonkeyDevPod";
+CHDeclareClass(PumaPlayerViewController)
+CHOptimizedMethod2(self, void, PumaPlayerViewController, setAdSDKState, int, arg1, isVertical, BOOL, arg2){
+    CHSuper2(PumaPlayerViewController, setAdSDKState, 0, isVertical, arg2);
 }
 
 CHConstructor{
-    CHLoadLateClass(CustomViewController);
-    CHClassHook(0, CustomViewController, getMyName);
+    CHLoadLateClass(PumaPlayerViewController);
+    CHClassHook2(PumaPlayerViewController, setAdSDKState, isVertical);
 }
